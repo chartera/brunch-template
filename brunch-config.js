@@ -4,7 +4,8 @@ exports.config = {
     javascripts: {
       joinTo: {	    
 	"js/shell.js": /^(js\/shell)/,
-	"js/vendor.js": /^(vendor\/js)/
+	  "js/vendor.js": /^(vendor\/js)/,
+	  "js/index.js": /^(js\/index)/,
       },
       
       order: {
@@ -18,7 +19,8 @@ exports.config = {
     stylesheets: {
       joinTo: {
 	"css/shell.css": "css/*.css" ,
-	"css/vendor.css": /^(vendor\/css)/
+	  "css/vendor.css": /^(vendor\/css)/,
+	  "js/index.js": /^(js\/index)/,
       } /*,
 	  order: {
 	  after: ["css/app.css"] // concat app.css last
@@ -57,20 +59,20 @@ exports.config = {
     // Dependencies and current project directories to watch
     watched: ["templates", "css", "js", "vendor", "assets"],
     // Where to compile files to
-    public: "./priv/static"
+    public: "../../dist/search"
   },
 
   // Configure your plugins
-  plugins: { 
-    babel: {
-      plugins: [
-	
-      ],
+    plugins: {
 
-      // Do not use ES6 compiler in vendor code
-      ignore: [/vendor/]
-    },
-    gzip: {
+	babel: {
+
+	    presets: ["@babel/preset-env"],
+	    ignore: [/vendor/]
+	},
+	
+
+	gzip: {
       paths: {
 	javascript: 'js',
 	stylesheet: 'css'

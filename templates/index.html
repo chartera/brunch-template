@@ -8,28 +8,36 @@
 
   <title></title>
 
-  <script src="js/vendor.js"></script>
-  <script src="js/shell.js"></script>
-
   <link rel="shortcut icon" href="img/favicon.png" type="image/png" />
   <link rel="icon" href="img/favicon.png" type="image/png" />
-  
   <link rel="stylesheet" type="text/css" href="css/shell.css">
+    <link rel="stylesheet" type="text/css" href="css/vendor.css">
+
+  <script src="js/vendor.js"></script>
+  <script src="js/shell.js"></script>
+  <script src="js/index.js"></script>
+
   
 </head>
 
 <body>
-  <h1>Hello World</h1>
+  <div id="index"></div>
 </body>
 
 <script>
   window.addEventListener('DOMContentLoaded', function(){
-    console.info("DOM loaded!")
+      console.info("DOM loaded!")
 
-    var shell = require("js/shell/shell.js");
-    var iterator = shell.init();
-    console.log(iterator.next().value)
+      var shell = require("js/shell/shell.js");
+      var iterator = shell.init();
+      console.log(iterator.next().value)
+      console.log(iterator.next().value)
 
+      var home = require('js/index/main.js');
+      home = home.init({});
+      home.view.$mount(); 
+      document.getElementById('index').appendChild(home.view.$el);
+      
   });
 </script>
 

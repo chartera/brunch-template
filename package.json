@@ -1,23 +1,28 @@
 {
-  "name": "vuecomp",
-  "version": "0.0.1",
-  "description": "BetterDoc Stacker",
-  "scripts": {
-    "deploy": "brunch build --production",
-    "watch": "brunch watch --stdin"
-  },
-  "author": "Nael Tasmim",
-  "license": "MIT",
-  "dependencies": {
-    "npm": "^6.5.0"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.2.2",
-    "@babel/plugin-transform-regenerator": "^7.0.0",
-    "@babel/preset-env": "^7.2.0",
-    "auto-reload-brunch": "^2.7.1",
-    "babel-brunch": "^7.0.0",
-    "brunch": "^2.10.17",
-    "express": "^4.16.4"
-  }
+    "name": "webshell",
+    "version": "0.0.1",
+    "main": "index.js",
+    "description": "SPA Core",
+    "scripts": {
+        "deploy": "brunch build --production",
+        "watch": "brunch watch --server"
+    },
+    "author": "Nael Tasmim",
+    "license": "MIT",
+    "dependencies": {
+        "npm": "^6.10.1",
+        "vue": "^2.5.16",
+        "vue-router": "^3.0.1",
+        "vuex": "^3.0.1"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.2.2",
+        "@babel/plugin-transform-regenerator": "^7.0.0",
+        "@babel/preset-env": "^7.2.0",
+        "auto-reload-brunch": "^2.7.1",
+        "babel-brunch": "^7.0.1",
+        "babel-preset-env": "^1.7.0",
+        "brunch": "^2.10.17",
+        "vue-brunch": "^2.0.3"
+    }
 }
